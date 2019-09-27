@@ -22,3 +22,5 @@ public:
 };
 
 }
+
+#endif // !CARD_TECOM27_H

@@ -1,5 +1,5 @@
 #include "Arduino.h"
-#include "hid5455.h"
+#include "scanner.h"
 #include <string.h>
 
 // https://en.wikipedia.org/wiki/Wiegand_interface
@@ -9,10 +9,10 @@
 namespace HID5455 {
 
 Scanner::Scanner(pin pin_data, pin pin_clock, pin pin_green_led, pin pin_beeper) {
-	HID5455::pin_data = pin_data;
-	HID5455::pin_clock = pin_clock;
-    HID5455::pin_green_led = pin_green_led;
-    HID5455::pin_beeper = pin_beeper;
+	Scanner::pin_data = pin_data;
+	Scanner::pin_clock = pin_clock;
+    Scanner::pin_green_led = pin_green_led;
+    Scanner::pin_beeper = pin_beeper;
 }
 
 void Scanner::init(void) {
@@ -64,7 +64,7 @@ void Scanner::morse(char* beep_str, int len) {
 void Scanner::save_our_souls(void) {
     char* sos = "... --- .../";
     while(true) {
-        morse(pin_beeper, pin_led, sos, strlen(sos));
+        morse(sos, strlen(sos));
     }
 }
 

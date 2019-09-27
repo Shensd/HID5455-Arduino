@@ -1,6 +1,8 @@
 #ifndef CARD_BUFFER_H
 #define CARD_BUFFER_H
 
+#include "Arduino.h"
+
 namespace HID5455 {
 
 class CardBuffer {

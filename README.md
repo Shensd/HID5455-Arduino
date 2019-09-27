@@ -45,19 +45,26 @@ A simple program using this library will look like the following:
 // create our scanner, passing it the pins as indicated on the backside
 // of the RFID scanner
 HID5455::Scanner scanner(DATA_DATA, DATA_CLOCK, GREEN_LED, BEEP_CONTROL);
+
+// Used to print information from a H10301 HID card
+void print_card_hid_h10301(HID5455::CardH10301* card) {
+    Serial.print("FACILITY : ");
+    Serial.println(card->facility_code);
+    Serial.print("CARD NUM : ");
+    Serial.println(card->card_number);
+}
  
 void loop(void) {
     // create a card buffer for holding the read bits
-    RFID::CardBuffer buffer;
+    HID5455::CardBuffer buffer;
  
     // loop will pause until a card is read, once a card is read it will be 
     // fed into the buffer
     scanner.wait_for_card(&buffer);
     
-    // read the card information into a H10301 card buffer, card methods
-    // come with a built in print to serial function, so we print it's 
-    // contents to the serial terminal
-    RFID::CardH10301 card(&buffer);
+    // read the card information into a H10301 card buffer, then print
+    // using the function declared above
+    HID5455::CardH10301 card(&buffer);
     print_card_hid_h10301(&card);
 }
  

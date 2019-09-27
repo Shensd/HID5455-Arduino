@@ -20,7 +20,7 @@ public:
     const bool HAS_OEM_CODE      = false;
     const bool HAS_ISSUE_LEVEL   = false;
 
-    virtual void parse_buffer(RFID::CardBuffer* buffer) = 0;
+    void parse_buffer(CardBuffer* buffer);
 };
 
 }

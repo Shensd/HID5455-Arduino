@@ -3,6 +3,7 @@
 
 #include "Arduino.h"
 #include "card_buffer.h"
+#include "card.h"
 
 typedef unsigned int pin;
 

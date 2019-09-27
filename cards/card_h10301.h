@@ -2,6 +2,7 @@
 #define CARD_H10301_H
 
 #include "../card.h"
+#include "../card_buffer.h"
 
 namespace HID5455 {
 
