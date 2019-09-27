@@ -115,3 +115,4 @@ Here are several resources that helped me develop this library, if you are also 
  * [cardinfo.barkweb.com.au](https://cardinfo.barkweb.com.au/)
  * [Understanding Card Formats (PDF by HID)](https://www.hidglobal.com/sites/default/files/hid-understanding_card_data_formats-wp-en.pdf)
 
+###### This project is licensed under the MIT Open Source license, see `LICENSE` for more information
