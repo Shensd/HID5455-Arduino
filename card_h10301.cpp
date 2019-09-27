@@ -2,7 +2,7 @@
 
 namespace HID5455 {
 
-CardH10301::CardH10301(CardBuffer* buffer) {
+CardH10301::CardH10301(HID5455::CardBuffer* buffer) {
     parse_buffer(buffer);
 }
 

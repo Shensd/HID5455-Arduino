@@ -1,26 +1,25 @@
-#ifndef CARD_P10001_H
-#define CARD_P10001_H
+#ifndef CARD_TECOM27_H
+#define CARD_TECOM27_H
 
-#include "../card.h"
+#include <card.h>
 
 namespace HID5455 {
 
-class CardP10001 : public Card {
+class CardTecom27 : public Card {
 public:
-    const unsigned int DATA_WIDTH = 40;
+    const unsigned int DATA_WIDTH = 27;
 
     const bool HAS_FACILITY_CODE = true;
     const bool HAS_CARD_NUMBER   = true;
     const bool HAS_OEM_CODE      = false;
     const bool HAS_ISSUE_LEVEL   = false;
 
-    CardP10001(void) = default;
-    CardP10001(CardBuffer* buffer);
+    CardTecom27(void) = default;
+    CardTecom27(CardBuffer* buffer);
 
     void parse_buffer(CardBuffer* buffer);
 };
 
 }
 
-
-#endif // !CARD_P10001_H
+#endif // !CARD_TECOM27_H

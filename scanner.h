@@ -28,4 +28,4 @@ public:
 
 }
 
-#endif // !HID5455_H
+#endif // !SCANNER_H

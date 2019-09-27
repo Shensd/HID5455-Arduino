@@ -1,8 +1,7 @@
 #ifndef CARD_H10301_H
 #define CARD_H10301_H
 
-#include "../card.h"
-#include "../card_buffer.h"
+#include <card.h>
 
 namespace HID5455 {
 
@@ -16,7 +15,7 @@ public:
     const bool HAS_ISSUE_LEVEL   = false;
 
     CardH10301(void) = default;
-    CardH10301(CardBuffer* buffer);
+    CardH10301(HID5455::CardBuffer* buffer);
 
     void parse_buffer(CardBuffer* buffer);
 };
