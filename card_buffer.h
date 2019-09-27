@@ -1,10 +1,7 @@
 #ifndef CARD_BUFFER_H
 #define CARD_BUFFER_H
 
-#include "Arduino.h"
-#include <string.h>
-
-namespace RFID {
+namespace HID5455 {
 
 class CardBuffer {
 private:
@@ -19,6 +16,7 @@ public:
     void push(bool value);
     bool get_bit_at(unsigned int position);
     unsigned int get_bit_range(unsigned int begin, unsigned int end);
+    unsigned int get_bits(const unsigned int bits[], unsigned int len);
 
     void print(void);
 

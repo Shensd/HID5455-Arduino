@@ -1,10 +1,9 @@
-#include "Arduino.h"
 #include "card_buffer.h"
+#include <string.h>
 
-namespace RFID {
+namespace HID5455 {
 
 CardBuffer::CardBuffer(void) {}
-
 
 void CardBuffer::clear(void) {
     memset(buffer, 0, data_width);
@@ -48,6 +47,18 @@ unsigned int CardBuffer::get_bit_range(unsigned int begin, unsigned int end) {
 	}
 
 	return total;
+}
+
+unsigned int CardBuffer::get_bits(const unsigned int bits[], unsigned int len) {
+    if(len <= 0) return 0;
+
+    unsigned int total = 0;
+
+    for(unsigned int i = 0; i < len; i++) {
+        total = (total << 1) + get_bit_at(bits[i]);
+    }
+
+    return total;
 }
 
 void CardBuffer::print(void) {

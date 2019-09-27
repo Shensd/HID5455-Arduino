@@ -4,7 +4,7 @@
 #include "Arduino.h"
 #include "card_buffer.h"
 
-namespace RFID {
+namespace HID5455 {
 
 class Card {
 public:
